@@ -1,0 +1,254 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=Generator content="Microsoft Word 15 (filtered)">
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:8.0pt;
+	margin-left:0in;
+	line-height:107%;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;}
+a:link, span.MsoHyperlink
+	{color:#0563C1;
+	text-decoration:underline;}
+.MsoChpDefault
+	{font-family:"Calibri",sans-serif;}
+.MsoPapDefault
+	{margin-bottom:8.0pt;
+	line-height:107%;}
+@page WordSection1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.0in 1.0in 1.0in;}
+div.WordSection1
+	{page:WordSection1;}
+-->
+</style>
+
+</head>
+
+<body lang=EN-US link="#0563C1" vlink="#954F72" style='word-wrap:break-word'>
+
+<div class=WordSection1>
+
+<p class=MsoNormal align=center style='text-align:center'><span
+style='font-size:18.0pt;line-height:107%'>CSCI 3907 Project 2: Hybrid Images</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span
+style='font-size:18.0pt;line-height:107%'>Mike Ehnot</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span
+style='font-size:18.0pt;line-height:107%'><a
+href="https://github.com/MichaelEhnot/CSCI-3907_Project2">https://github.com/MichaelEhnot/CSCI-3907_Project2</a>
+</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span
+style='font-size:18.0pt;line-height:107%'>&nbsp;</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span
+style='font-size:18.0pt;line-height:107%'><img border=0 width=657 height=508
+id="Picture 2" src="index_files/image001.jpg"></span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span
+style='font-size:18.0pt;line-height:107%'>&nbsp;</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span
+style='font-size:12.0pt;line-height:107%'>For this project, I worked on making something
+called a “hybrid image”. In short, a hybrid image is an image that looks like
+one thing from one perspective, but also looks like something else from another
+perspective. In this case, the change in perspective is distance. Each image
+looks like one thing from up-close, and like something else from far away (You
+can also squint really hard to simulate being far away from the image). Using inspiration
+from “Hybrid Images” by Aude Oliva, I made my own hybrid images that have
+different pictures based on how far away they are being viewed from.</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span
+style='font-size:12.0pt;line-height:107%'>To make a hybrid image, I filtered
+out the “high frequency” components of one image and the “low frequency” components
+of the other image. In this context, low and high frequency components refer to
+the parts of an image where there are things like lines, borders, and changes
+in color. The high frequency components are areas where there is a lot of
+change across the pixels of an image, and low frequency components are areas
+where there are very little changes across each pixel.</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span
+style='font-size:12.0pt;line-height:107%'>To find high and low frequency
+components, I used a gaussian filter to find areas where the pixel change is
+high or low. To keep the low frequency components of an image, you simple apply
+a gaussian filter which slightly blurs the image, removing harsh changes across
+pixels. To keep the high frequency components, you use a gaussian filter to find
+the low frequency components of the image then simply subtract them from the
+original image, leaving the high frequency components. </span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span
+style='font-size:12.0pt;line-height:107%'>Finally, you add the high frequency image
+to the low frequency image to make the hybrid image. Here are my hybrid images.</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span
+style='font-size:12.0pt;line-height:107%'><img border=0 width=528 height=409
+id="Picture 3" src="index_files/image002.jpg"
+alt="A bunch of bananas&#10;&#10;Description automatically generated"><img
+border=0 width=528 height=409 id="Picture 4" src="index_files/image003.jpg"
+alt="A picture containing grape, fruit&#10;&#10;Description automatically generated"></span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span
+style='font-size:12.0pt;line-height:107%'><img border=0 width=657 height=508
+id="Picture 5" src="index_files/image001.jpg"></span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span
+style='font-size:12.0pt;line-height:107%'>This is a combination of a bunch of
+bananas and a bunch of grapes. Both images are easy to spot, but the two images
+do not line up very cleanly.</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span
+style='font-size:12.0pt;line-height:107%'>&nbsp;</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span
+style='font-size:12.0pt;line-height:107%'><img border=0 width=298 height=299
+id="Picture 6" src="index_files/image004.jpg"
+alt="A coin with a person's face on it&#10;&#10;Description automatically generated with medium confidence"><img
+border=0 width=298 height=299 id="Picture 7" src="index_files/image005.jpg"
+alt="A silver coin with a bird on it&#10;&#10;Description automatically generated with medium confidence"></span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span
+style='font-size:12.0pt;line-height:107%'><img border=0 width=373 height=374
+id="Picture 8" src="index_files/image006.jpg"
+alt="A picture containing coin&#10;&#10;Description automatically generated"></span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span
+style='font-size:12.0pt;line-height:107%'>This image is a combination of two
+sides of a quarter. I though it would be cool to make the coin apart to be heads
+from one distance and tails from another. The hybrid image is lined up well, but
+it is a little hard to distinguish between heads and tails. From very far away
+the coin looks like heads, and from up close, it looks more like tails.</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span
+style='font-size:12.0pt;line-height:107%'>&nbsp;</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span
+style='font-size:12.0pt;line-height:107%'><img border=0 width=310 height=302
+id="Picture 9" src="index_files/image007.jpg"
+alt="A pepperoni pizza on a plate&#10;&#10;Description automatically generated"><img
+border=0 width=326 height=318 id="Picture 10" src="index_files/image008.jpg"
+alt="A slice of watermelon&#10;&#10;Description automatically generated with medium confidence"></span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span
+style='font-size:12.0pt;line-height:107%'><img border=0 width=407 height=398
+id="Picture 11" src="index_files/image009.jpg"></span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span
+style='font-size:12.0pt;line-height:107%'>This image combines a slice of
+watermelon and a slice of pizza. Probably the hardest part about making hybrid
+images is the selection of images. I’ve learned that the low frequency image
+needs rely on color and shape to be identified because the texture of the image
+is usually blurred away by the filter, the high frequency image should rely
+more on its texture to identified, because the filter usually removes its
+predominant colors.</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span
+style='font-size:12.0pt;line-height:107%'>&nbsp;</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span
+style='font-size:12.0pt;line-height:107%'><img border=0 width=422 height=426
+id="Picture 13" src="index_files/image010.jpg"
+alt="A picture containing orange, oranges, citrus, half&#10;&#10;Description automatically generated"><img
+border=0 width=411 height=415 id="Picture 14" src="index_files/image011.jpg"
+alt="A picture containing athletic game, basketball, sport&#10;&#10;Description automatically generated"></span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span
+style='font-size:12.0pt;line-height:107%'><img border=0 width=522 height=527
+id="Picture 15" src="index_files/image012.jpg"
+alt="A picture containing fruit, orange, citrus, half&#10;&#10;Description automatically generated"></span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span
+style='font-size:12.0pt;line-height:107%'>I think this image is my favorite.
+From up close, you mostly see the fine details and texture of the orange, but
+when you move far away, you only see the orange basketball with black lines on
+it. I think the colors and textures of these two images work well together. Below
+are the log magnitudes of the Fourier transforms of the images used to create
+this image.</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span
+style='font-size:12.0pt;line-height:107%'><img border=0 width=614 height=461
+id="Picture 16" src="index_files/image013.png"
+alt="Chart, scatter chart&#10;&#10;Description automatically generated"><img
+border=0 width=614 height=461 id="Picture 17" src="index_files/image014.png"
+alt="Chart, box and whisker chart&#10;&#10;Description automatically generated"></span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span
+style='font-size:12.0pt;line-height:107%'>Above is the original basketball on
+the left, and the original orange on the right</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span
+style='font-size:12.0pt;line-height:107%'><img border=0 width=614 height=461
+id="Picture 18" src="index_files/image015.png"
+alt="Chart, scatter chart&#10;&#10;Description automatically generated"></span><span
+style='font-size:12.0pt;line-height:107%'> <img border=0 width=614 height=461
+id="Picture 19" src="index_files/image016.png"
+alt="Chart&#10;&#10;Description automatically generated"></span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span
+style='font-size:12.0pt;line-height:107%'>Above is the low frequency filtered basketball
+on the left, and the high frequency filtered orange on the right</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span
+style='font-size:12.0pt;line-height:107%'><img border=0 width=614 height=461
+id="Picture 20" src="index_files/image017.png"
+alt="Chart, scatter chart&#10;&#10;Description automatically generated"></span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span
+style='font-size:12.0pt;line-height:107%'>Above is the hybrid image</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span
+style='font-size:12.0pt;line-height:107%'>&nbsp;</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span
+style='font-size:18.0pt;line-height:107%'>Reflection</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span
+style='font-size:12.0pt;line-height:107%'>This was a very interesting project that
+taught me a lot a bout filtering and deconstructing images. I think that the
+hardest part of the project was finding the images to combine. There are many
+different aspects of images that can mess up a hybrid image or make the hybrid
+image look unrecognizable. I think the most important part of image selection
+is the size and shape of the objects in the image. My best results came from
+objects that were the same size and shape like the quarters and basketball
+images. I tried making hybrid images of things like birds and planes or
+different shoes, but the shape and colors of those images just weren’t similar
+enough to look good together. Both of the objects have to be pretty close to
+the same shape in order to make the image look nice. Its almost like the low
+frequency image acts as the base coat and the high frequency image is the pattern
+on top. If the high frequency image is not “inside” the low frequency image, it
+looks like there is a ghost popping out of the low frequency image. The color
+of the images is important too, the predominant color of the image will be the
+color of the low frequency image and if the high frequency image is different
+color than that, the low frequency image won’t have the right color. Another difficult
+aspect of making hybrid images is finding the right threshold frequency of the high
+and low frequency filters. You can change how much a gaussian filter “blurs” an
+image and for each image you have to find a happy medium for each filter, so each
+image is clearly visible at distinct distances.</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span
+style='font-size:12.0pt;line-height:107%'>In the future, it may be useful to
+take my own images to make hybrid images. This would allow me to stage the
+objects in the exact way that would make a nice hybrid image. However, it would
+still be difficult to know exactly how the hybrid image would appear even while
+taking the pictures.</span></p>
+
+</div>
+
+</body>
+
+</html>
